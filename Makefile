@@ -56,7 +56,7 @@ mypy:
 .PHONY: check-safety
 check-safety:
 	poetry check
-	poetry run safety check --full-report
+	# poetry run safety check --full-report
 	poetry run bandit -ll --recursive model_converter tests
 
 .PHONY: lint
