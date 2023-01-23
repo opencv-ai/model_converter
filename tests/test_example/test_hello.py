@@ -1,7 +1,7 @@
 """Tests for hello function."""
 import pytest
 
-from model_converter.example import hello
+from converter.example import hello
 
 
 @pytest.mark.parametrize(
