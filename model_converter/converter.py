@@ -5,7 +5,7 @@ import onnx
 import torch
 from torch import nn
 
-from converter.model_utils import (
+from model_converter.model_utils import (
     check_onnx_model,
     export_model_onnx,
     load_model_weights,

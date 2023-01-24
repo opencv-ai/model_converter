@@ -40,14 +40,14 @@ formatting: codestyle
 #* Linting
 .PHONY: test
 test:
-	PYTHONPATH=$(PYTHONPATH) poetry run pytest -c pyproject.toml --cov-report=html --cov=converter tests/
+	PYTHONPATH=$(PYTHONPATH) poetry run pytest -c pyproject.toml --cov-report=html --cov=model_converter tests/
 	poetry run coverage-badge -o assets/images/coverage.svg -f
 
 .PHONY: check-codestyle
 check-codestyle:
 	poetry run isort --diff --check-only --settings-path pyproject.toml ./
 	poetry run black --diff --check --config pyproject.toml ./
-	poetry run darglint --verbosity 2 converter tests
+	poetry run darglint --verbosity 2 model_converter tests
 
 .PHONY: mypy
 mypy:
@@ -57,7 +57,7 @@ mypy:
 check-safety:
 	poetry check
 	# poetry run safety check --full-report
-	poetry run bandit -ll --recursive converter tests
+	poetry run bandit -ll --recursive model_converter tests
 
 .PHONY: lint
 lint: test check-codestyle mypy check-safety
