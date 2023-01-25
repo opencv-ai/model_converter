@@ -1,4 +1,4 @@
-# Docker for model-converter
+# Docker for model_converter
 
 ## Installation
 

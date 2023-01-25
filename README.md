@@ -1,16 +1,16 @@
-# model-converter
+# model_converter
 
 <div align="center">
 
-[![Build status](https://github.com/opencv-ai/model-converter/workflows/build/badge.svg?branch=master&event=push)](https://github.com/opencv-ai/model-converter/actions?query=workflow%3Abuild)
-[![Python Version](https://img.shields.io/pypi/pyversions/model-converter.svg)](https://pypi.org/project/model-converter/)
-[![Dependencies Status](https://img.shields.io/badge/dependencies-up%20to%20date-brightgreen.svg)](https://github.com/opencv-ai/model-converter/pulls?utf8=%E2%9C%93&q=is%3Apr%20author%3Aapp%2Fdependabot)
+[![Build status](https://github.com/opencv-ai/model_converter/workflows/build/badge.svg?branch=master&event=push)](https://github.com/opencv-ai/model_converter/actions?query=workflow%3Abuild)
+[![Python Version](https://img.shields.io/pypi/pyversions/model_converter.svg)](https://pypi.org/project/model_converter/)
+[![Dependencies Status](https://img.shields.io/badge/dependencies-up%20to%20date-brightgreen.svg)](https://github.com/opencv-ai/model_converter/pulls?utf8=%E2%9C%93&q=is%3Apr%20author%3Aapp%2Fdependabot)
 
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![Security: bandit](https://img.shields.io/badge/security-bandit-green.svg)](https://github.com/PyCQA/bandit)
-[![Pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/opencv-ai/model-converter/blob/master/.pre-commit-config.yaml)
-[![Semantic Versions](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--versions-e10079.svg)](https://github.com/opencv-ai/model-converter/releases)
-[![License](https://img.shields.io/github/license/opencv-ai/model-converter)](https://github.com/opencv-ai/model-converter/blob/master/LICENSE)
+[![Pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/opencv-ai/model_converter/blob/master/.pre-commit-config.yaml)
+[![Semantic Versions](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--versions-e10079.svg)](https://github.com/opencv-ai/model_converter/releases)
+[![License](https://img.shields.io/github/license/opencv-ai/model_converter)](https://github.com/opencv-ai/model_converter/blob/master/LICENSE)
 ![Coverage Report](assets/images/coverage.svg)
 
 PyTorch model conversion to different formats
@@ -24,7 +24,7 @@ PyTorch model conversion to different formats
 1. Initialize `git` inside your repo:
 
 ```bash
-cd model-converter && git init
+cd model_converter && git init
 ```
 
 2. If you don't have `Poetry` installed run:
@@ -52,7 +52,7 @@ make codestyle
 git add .
 git commit -m ":tada: Initial commit"
 git branch -M main
-git remote add origin https://github.com/opencv-ai/model-converter.git
+git remote add origin https://github.com/opencv-ai/model_converter.git
 git push -u origin main
 ```
 
@@ -115,46 +115,46 @@ Articles:
 ### Development features
 
 - Supports for `Python 3.9` and higher.
-- [`Poetry`](https://python-poetry.org/) as the dependencies manager. See configuration in [`pyproject.toml`](https://github.com/opencv-ai/model-converter/blob/master/pyproject.toml) and [`setup.cfg`](https://github.com/opencv-ai/model-converter/blob/master/setup.cfg).
+- [`Poetry`](https://python-poetry.org/) as the dependencies manager. See configuration in [`pyproject.toml`](https://github.com/opencv-ai/model_converter/blob/master/pyproject.toml) and [`setup.cfg`](https://github.com/opencv-ai/model_converter/blob/master/setup.cfg).
 - Automatic codestyle with [`black`](https://github.com/psf/black), [`isort`](https://github.com/timothycrosley/isort) and [`pyupgrade`](https://github.com/asottile/pyupgrade).
 - Ready-to-use [`pre-commit`](https://pre-commit.com/) hooks with code-formatting.
 - Type checks with [`mypy`](https://mypy.readthedocs.io); docstring checks with [`darglint`](https://github.com/terrencepreilly/darglint); security checks with [`safety`](https://github.com/pyupio/safety) and [`bandit`](https://github.com/PyCQA/bandit)
 - Testing with [`pytest`](https://docs.pytest.org/en/latest/).
-- Ready-to-use [`.editorconfig`](https://github.com/opencv-ai/model-converter/blob/master/.editorconfig), [`.dockerignore`](https://github.com/opencv-ai/model-converter/blob/master/.dockerignore), and [`.gitignore`](https://github.com/opencv-ai/model-converter/blob/master/.gitignore). You don't have to worry about those things.
+- Ready-to-use [`.editorconfig`](https://github.com/opencv-ai/model_converter/blob/master/.editorconfig), [`.dockerignore`](https://github.com/opencv-ai/model_converter/blob/master/.dockerignore), and [`.gitignore`](https://github.com/opencv-ai/model_converter/blob/master/.gitignore). You don't have to worry about those things.
 
 ### Deployment features
 
 - `GitHub` integration: issue and pr templates.
-- `Github Actions` with predefined [build workflow](https://github.com/opencv-ai/model-converter/blob/master/.github/workflows/build.yml) as the default CI/CD.
-- Everything is already set up for security checks, codestyle checks, code formatting, testing, linting, docker builds, etc with [`Makefile`](https://github.com/opencv-ai/model-converter/blob/master/Makefile#L89). More details in [makefile-usage](#makefile-usage).
-- [Dockerfile](https://github.com/opencv-ai/model-converter/blob/master/docker/Dockerfile) for your package.
+- `Github Actions` with predefined [build workflow](https://github.com/opencv-ai/model_converter/blob/master/.github/workflows/build.yml) as the default CI/CD.
+- Everything is already set up for security checks, codestyle checks, code formatting, testing, linting, docker builds, etc with [`Makefile`](https://github.com/opencv-ai/model_converter/blob/master/Makefile#L89). More details in [makefile-usage](#makefile-usage).
+- [Dockerfile](https://github.com/opencv-ai/model_converter/blob/master/docker/Dockerfile) for your package.
 - Always up-to-date dependencies with [`@dependabot`](https://dependabot.com/). You will only [enable it](https://docs.github.com/en/github/administering-a-repository/enabling-and-disabling-version-updates#enabling-github-dependabot-version-updates).
-- Automatic drafts of new releases with [`Release Drafter`](https://github.com/marketplace/actions/release-drafter). You may see the list of labels in [`release-drafter.yml`](https://github.com/opencv-ai/model-converter/blob/master/.github/release-drafter.yml). Works perfectly with [Semantic Versions](https://semver.org/) specification.
+- Automatic drafts of new releases with [`Release Drafter`](https://github.com/marketplace/actions/release-drafter). You may see the list of labels in [`release-drafter.yml`](https://github.com/opencv-ai/model_converter/blob/master/.github/release-drafter.yml). Works perfectly with [Semantic Versions](https://semver.org/) specification.
 
 ### Open source community features
 
-- Ready-to-use [Pull Requests templates](https://github.com/opencv-ai/model-converter/blob/master/.github/PULL_REQUEST_TEMPLATE.md) and several [Issue templates](https://github.com/opencv-ai/model-converter/tree/master/.github/ISSUE_TEMPLATE).
+- Ready-to-use [Pull Requests templates](https://github.com/opencv-ai/model_converter/blob/master/.github/PULL_REQUEST_TEMPLATE.md) and several [Issue templates](https://github.com/opencv-ai/model_converter/tree/master/.github/ISSUE_TEMPLATE).
 - Files such as: `LICENSE`, `CONTRIBUTING.md`, `CODE_OF_CONDUCT.md`, and `SECURITY.md` are generated automatically.
-- [`Stale bot`](https://github.com/apps/stale) that closes abandoned issues after a period of inactivity. (You will only [need to setup free plan](https://github.com/marketplace/stale)). Configuration is [here](https://github.com/opencv-ai/model-converter/blob/master/.github/.stale.yml).
+- [`Stale bot`](https://github.com/apps/stale) that closes abandoned issues after a period of inactivity. (You will only [need to setup free plan](https://github.com/marketplace/stale)). Configuration is [here](https://github.com/opencv-ai/model_converter/blob/master/.github/.stale.yml).
 - [Semantic Versions](https://semver.org/) specification with [`Release Drafter`](https://github.com/marketplace/actions/release-drafter).
 
 ## Installation
 
 ```bash
-pip install -U model-converter
+pip install -U model_converter
 ```
 
 or install with `Poetry`
 
 ```bash
-poetry add model-converter
+poetry add model_converter
 ```
 
 
 
 ### Makefile usage
 
-[`Makefile`](https://github.com/opencv-ai/model-converter/blob/master/Makefile) contains a lot of functions for faster development.
+[`Makefile`](https://github.com/opencv-ai/model_converter/blob/master/Makefile) contains a lot of functions for faster development.
 
 <details>
 <summary>1. Download and remove Poetry</summary>
@@ -306,7 +306,7 @@ Remove docker image with
 make docker-remove
 ```
 
-More information [about docker](https://github.com/opencv-ai/model-converter/tree/master/docker).
+More information [about docker](https://github.com/opencv-ai/model_converter/tree/master/docker).
 
 </p>
 </details>
@@ -349,7 +349,7 @@ make cleanup
 
 ## 📈 Releases
 
-You can see the list of available releases on the [GitHub Releases](https://github.com/opencv-ai/model-converter/releases) page.
+You can see the list of available releases on the [GitHub Releases](https://github.com/opencv-ai/model_converter/releases) page.
 
 We follow [Semantic Versions](https://semver.org/) specification.
 
@@ -366,26 +366,26 @@ We use [`Release Drafter`](https://github.com/marketplace/actions/release-drafte
 |            `documentation`            |    📝 Documentation     |
 |            `dependencies`             | ⬆️ Dependencies updates |
 
-You can update it in [`release-drafter.yml`](https://github.com/opencv-ai/model-converter/blob/master/.github/release-drafter.yml).
+You can update it in [`release-drafter.yml`](https://github.com/opencv-ai/model_converter/blob/master/.github/release-drafter.yml).
 
 GitHub creates the `bug`, `enhancement`, and `documentation` labels for you. Dependabot creates the `dependencies` label. Create the remaining labels on the Issues tab of your GitHub repository, when you need them.
 
 ## 🛡 License
 
-[![License](https://img.shields.io/github/license/opencv-ai/model-converter)](https://github.com/opencv-ai/model-converter/blob/master/LICENSE)
+[![License](https://img.shields.io/github/license/opencv-ai/model_converter)](https://github.com/opencv-ai/model_converter/blob/master/LICENSE)
 
-This project is licensed under the terms of the `MIT` license. See [LICENSE](https://github.com/opencv-ai/model-converter/blob/master/LICENSE) for more details.
+This project is licensed under the terms of the `MIT` license. See [LICENSE](https://github.com/opencv-ai/model_converter/blob/master/LICENSE) for more details.
 
 ## 📃 Citation
 
 ```bibtex
-@misc{model-converter,
+@misc{model_converter,
   author = {OpenCV.AI},
   title = {PyTorch model conversion to different formats},
   year = {2023},
   publisher = {GitHub},
   journal = {GitHub repository},
-  howpublished = {\url{https://github.com/opencv-ai/model-converter}}
+  howpublished = {\url{https://github.com/opencv-ai/model_converter}}
 }
 ```
 

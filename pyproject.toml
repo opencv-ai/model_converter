@@ -4,14 +4,14 @@ requires = ["poetry_core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
-name = "model-converter"
+name = "model_converter"
 version = "0.1.0"
 description = "PyTorch model conversion to different formats"
 readme = "README.md"
 authors = ["OpenCV.AI <contact@opencv.ai>"]
 license = "MIT"
-repository = "https://github.com/opencv-ai/model-converter"
-homepage = "https://github.com/opencv-ai/model-converter"
+repository = "https://github.com/opencv-ai/model_converter"
+homepage = "https://github.com/opencv-ai/model_converter"
 
 # Keywords description https://python-poetry.org/docs/pyproject/#keywords
 keywords = []  #! Update me
@@ -31,7 +31,6 @@ classifiers = [  #! Update me
 
 [tool.poetry.dependencies]
 python = "3.9.*"
-opencv-python = "*"
 torch = "<= 1.12.0"
 onnx  = "*"
 tensorflow = "^2.11"
@@ -138,7 +137,7 @@ addopts = [
 source = ["tests"]
 
 [coverage.paths]
-source = "model-converter"
+source = "model_converter"
 
 [coverage.run]
 branch = true
