@@ -57,7 +57,7 @@ To use converter in your project:
 
     ```python
     my_converter = model_converter.Converter(save_dir=<path to your output directory>, 
-                                            simplify_exported_model=False
+                                             simplify_exported_model=False
                                             )
     ```
 
@@ -67,12 +67,12 @@ To use converter in your project:
 
     ```python
     converted_model = my_converter.convert(torch_model, # model for conversion
-                                          torch_weights, # path to model checkpoint
-                                          batch_size, # batch size
-                                          input_size, # input size in [height, width] format
-                                          channels, # number of input channels
-                                          fmt, # output format for conversion - one of 'onnx', 'keras', 'tflite', 'coreml', 'tflite_coreml'
-                                          force # set to `True` to rebuild all intermediate steps
+                                           torch_weights, # path to model checkpoint
+                                           batch_size, # batch size
+                                           input_size, # input size in [height, width] format
+                                           channels, # number of input channels
+                                           fmt, # output format for conversion - one of 'onnx', 'keras', 'tflite', 'coreml', 'tflite_coreml'
+                                           force # set to `True` to rebuild all intermediate steps
                                           ) 
     ```
 
