@@ -40,7 +40,7 @@ Currently, two main conversion pipelines are supported:
 It can be installed with the `pip`:
 
 ```bash
-pip install git+https://gitlab.com/xperience-ai/edge-devices/converter.git
+pip install git+ssh://git@github.com/opencv-ai/model_converter
 ```
 
 ## Get started
