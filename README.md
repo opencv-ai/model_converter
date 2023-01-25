@@ -49,32 +49,32 @@ To use converter in your project:
 
 1. Import converter:
 
-```python
-import model_converter
-```
+    ```python
+    import model_converter
+    ```
 
 1. Create an instance of a convertor:
 
-```python
-my_converter = model_converter.Converter(save_dir=<path to your output directory>, 
-                                         simplify_exported_model=False
-                                        )
-```
+    ```python
+    my_converter = model_converter.Converter(save_dir=<path to your output directory>, 
+                                            simplify_exported_model=False
+                                            )
+    ```
 
-Use `simplify_exported_model=True` key to simplify onnx model.
+    Use `simplify_exported_model=True` key to simplify onnx model.
 
 1. Run conversion of your model:
 
-```python
-converted_model = my_converter.convert(torch_model, # model for conversion
-                                       torch_weights, # path to model checkpoint
-                                       batch_size, # batch size
-                                       input_size, # input size in [height, width] format
-                                       channels, # number of input channels
-                                       fmt, # output format for conversion - one of 'onnx', 'keras', 'tflite', 'coreml', 'tflite_coreml'
-                                       force # set to `True` to rebuild all intermediate steps
-                                      ) 
-```
+    ```python
+    converted_model = my_converter.convert(torch_model, # model for conversion
+                                          torch_weights, # path to model checkpoint
+                                          batch_size, # batch size
+                                          input_size, # input size in [height, width] format
+                                          channels, # number of input channels
+                                          fmt, # output format for conversion - one of 'onnx', 'keras', 'tflite', 'coreml', 'tflite_coreml'
+                                          force # set to `True` to rebuild all intermediate steps
+                                          ) 
+    ```
 
 ## Development
 
