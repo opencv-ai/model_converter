@@ -31,12 +31,15 @@ classifiers = [  #! Update me
 
 [tool.poetry.dependencies]
 python = "3.9.*"
+numpy = "1.23.*"
 onnx = "*"
+onnxruntime = "*"
 onnxsim = "*"
 torch = "<= 1.12.0"
 tensorflow = "^2.11"
 keras = "*"
 onnx2keras = { path = "./onnx2keras/" }
+coremltools = "*"
 
 
 
@@ -57,6 +60,7 @@ coverage = "^6.1.2"
 coverage-badge = "^1.1.0"
 pytest-html = "^3.1.1"
 pytest-cov = "^3.0.0"
+timm = "*"
 
 [tool.black]
 # https://github.com/psf/black
