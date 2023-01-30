@@ -38,6 +38,6 @@ def test_classifier(tmp_path, encoder_name, num_classes, in_size, in_chans):
         fmt="tflite_coreml",
     )
 
-    p = tmp_path.glob("*")
-    out_files = {x.name for x in p if x.is_file()}
-    assert expected_out_models.issubset(out_files)
+    for model_name in expected_out_models:
+        model_path = tmp_path / model_name
+        assert model_path.is_file(), f"{model_name=} does not exist"

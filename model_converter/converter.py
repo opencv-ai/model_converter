@@ -1,4 +1,4 @@
-from typing import Optional
+from __future__ import annotations
 
 import logging
 import pathlib
@@ -124,22 +124,13 @@ class Converter:
         if hasattr(torch_model, "Output"):
             # Rename output nodes
             output_names = torch_model.Output._fields
-            if len(output_names) > 1:
-                for i, output_name in enumerate(output_names):
-                    output_shape = list(example_torch_output[i].shape)
-                    coreml_spec.description.output[i].type.multiArrayType.shape.extend(
-                        output_shape
-                    )
-                    coremltools.utils.rename_feature(
-                        coreml_spec, coreml_spec.description.output[i].name, output_name
-                    )
-            else:
-                output_shape = list(example_torch_output[0].shape)
-                coreml_spec.description.output[0].type.multiArrayType.shape.extend(
+            for i, output_name in enumerate(output_names):
+                output_shape = list(example_torch_output[i].shape)
+                coreml_spec.description.output[i].type.multiArrayType.shape.extend(
                     output_shape
                 )
                 coremltools.utils.rename_feature(
-                    coreml_spec, coreml_spec.description.output[0].name, output_names[0]
+                    coreml_spec, coreml_spec.description.output[i].name, output_name
                 )
 
         coreml_model = coremltools.models.MLModel(coreml_spec)
@@ -171,7 +162,7 @@ class Converter:
         channels: int,
         fmt: str,
         force: bool = True,
-        torch_weights: Optional[pathlib.Path] = None,
+        torch_weights: pathlib.Path | None = None,
     ):
         if torch_weights is not None:
             load_model_weights(torch_model, torch_weights, fuse_bn=True)
