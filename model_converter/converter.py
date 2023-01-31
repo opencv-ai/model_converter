@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 import logging
 import pathlib
 
@@ -118,9 +120,10 @@ class Converter:
             inputs=[coremltools.TensorType(shape=[batch_size, channels, *input_size])],
         )
         coreml_spec = coreml_model.get_spec()
-        # Rename output nodes
-        output_names = torch_model.Output._fields
-        if len(output_names) > 1:
+
+        if hasattr(torch_model, "Output"):
+            # Rename output nodes
+            output_names = torch_model.Output._fields
             for i, output_name in enumerate(output_names):
                 output_shape = list(example_torch_output[i].shape)
                 coreml_spec.description.output[i].type.multiArrayType.shape.extend(
@@ -129,14 +132,6 @@ class Converter:
                 coremltools.utils.rename_feature(
                     coreml_spec, coreml_spec.description.output[i].name, output_name
                 )
-        else:
-            output_shape = list(example_torch_output[0].shape)
-            coreml_spec.description.output[0].type.multiArrayType.shape.extend(
-                output_shape
-            )
-            coremltools.utils.rename_feature(
-                coreml_spec, coreml_spec.description.output[0].name, output_names[0]
-            )
 
         coreml_model = coremltools.models.MLModel(coreml_spec)
         coreml_model.save(self.coreml_path)
@@ -162,14 +157,15 @@ class Converter:
     def convert(
         self,
         torch_model: nn.Module,
-        torch_weights: pathlib.Path,
-        batch_size,
-        input_size,
-        channels,
-        fmt,
-        force=True,
+        batch_size: int,
+        input_size: list,
+        channels: int,
+        fmt: str,
+        force: bool = True,
+        torch_weights: pathlib.Path | None = None,
     ):
-        load_model_weights(torch_model, torch_weights, fuse_bn=True)
+        if torch_weights is not None:
+            load_model_weights(torch_model, torch_weights, fuse_bn=True)
         if force:
             if self.coreml_path.exists():
                 self.coreml_path.unlink()
