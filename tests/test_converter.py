@@ -38,8 +38,6 @@ class ClsReg2Model(nn.Module):
         cls = self.core.forward_head(features)
 
         reg_input = self.core.forward_head(features, pre_logits=True)
-        print(self.core.num_features)
-        print(reg_input.shape)
         reg_xy = self.head_xy(reg_input)
         reg_wh = self.head_wh(reg_input)
         return self.Output(cls=cls, reg_xy=reg_xy, reg_wh=reg_wh)
