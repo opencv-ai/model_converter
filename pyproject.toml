@@ -35,7 +35,7 @@ numpy = "1.23.*"
 onnx = "*"
 onnxruntime = "*"
 onnxsim = "*"
-torch = "<= 1.12.0"
+torch = "< 2.0"
 tensorflow = "^2.11"
 keras = "*"
 onnx2keras = { path = "./onnx2keras/" }
